@@ -1,24 +1,50 @@
-This code creates a tictactoe game using the concepts of Reinforcement Learning, particularly Q learning.
-It uses the Bellman Equation to train the machine over a series of multiple episodes and then the user plays against it.
-It can be improved by increasing the number of episodes or by changing the values of epsilong and gamma.
+# Tic-Tac-Toe AI
 
-## How to Play
-1. Run the game using the instructions below.
-2. Select the game mode:
-   - Human vs. Human: Both players take turns to play.
-   - Human vs. AI: The human player competes against an AI agent.
-3. Players will be prompted to enter their moves by specifying the position (1-9) of their choice on a 3x3 grid:
+## Overview
+This project implements a Tic-Tac-Toe game with a reinforcement learning AI using Q-learning. The AI learns optimal strategies by playing against a random opponent.
+
+## Features
+- **Q-learning AI** that learns optimal moves through self-play.
+- **Trainable AI** with adjustable hyperparameters (`alpha`, `gamma`, `epsilon`).
+- **Human vs AI mode** where a user can play against the trained AI.
+- **State-based Q-table** for learning and decision-making.
+
+## Files
+- `tic_tac_toe_ai.py` - The main script containing game logic and AI training.
+
+## How It Works
+1. **Training:**
+   - The AI plays games against a random opponent.
+   - It updates its Q-values using the Q-learning formula.
+   - Training runs for a specified number of episodes (default: 60,000).
+
+2. **Playing Against AI:**
+   - The user plays as `X`, and the AI plays as `O`.
+   - The AI selects moves using an epsilon-greedy strategy.
+   - The game board updates after each move, displaying the state.
+
+## Installation
+Ensure you have Python installed, then install dependencies:
+```sh
+pip install numpy
+```
+
+## Running the Game
+1. Train the AI (optional):
+   ```sh
+   python tic_tac_toe_ai.py
    ```
-   1 | 2 | 3
-   ---------
-   4 | 5 | 6
-   ---------
-   7 | 8 | 9
+2. Play against the trained AI:
+   ```sh
+   python tic_tac_toe_ai.py
    ```
-4. The game continues until:
-   - One player gets three marks in a row (horizontal, vertical, or diagonal).
-   - The grid is full, resulting in a draw.
+   (The script automatically trains the AI before starting the game.)
 
+## Future Enhancements
+- Save and load Q-values for persistent learning.
+- Improve opponent strategy for better AI training.
+- Add a GUI for better user experience.
 
-## Prerequisites
-- Python 3.x
+## Author
+Sarayu Ventrapati
+
